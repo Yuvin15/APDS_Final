@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0;
+}
+
+html, body {
+  height: 100%; 
+  width: 100%; 
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+}
+
+#root, .App {
+  background-color: #ffffff;
+  height: 100%; 
+  width: 100%; 
+}
+
+.App-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100px; 
+}
+
+.main-headings {
+  font-size: 2em; 
+  font-weight: bold;
+  size: 100dp;
+  text-decoration: solid;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  
+}
+

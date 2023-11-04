@@ -1,0 +1,26 @@
+/* Post.css */
+.post {
+    background-color: #3787d8;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post-title {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .post-info {
+    color: #000000;
+    line-height: 1.6;
+  }
+  
