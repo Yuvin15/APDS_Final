@@ -41,4 +41,51 @@ body {
   align-items: center; 
   
 }
+.create-post-container button {
+  display: block;
+  margin: 0 auto;
+}
 
+.large-button {
+  font-size: 18px;
+  padding: 15px 30px;
+}
+
+.button-margin {
+  size: 10px;
+  margin-left: 10px; 
+}
+
+.button-container {
+  size: 10px;
+  text-align: center; 
+  margin-top: 50px; 
+}
+.custom-button {
+  box-shadow: none;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #3787d8; 
+  color: #ffffff; 
+}
+
+.login-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  box-shadow: none;
+  padding: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #3787d8; 
+  color: #ffffff; 
+}

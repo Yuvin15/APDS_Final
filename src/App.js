@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import "bootstrap/dist/css/bootstrap.min.css";
+import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar';
-import Post from './components/Post/Post'; 
-import SearchBox from './components/SearchBar/SearchBar'; 
+import { CreatePost, Post } from './components/Post/Post';
+import SearchBox from './components/SearchBar/SearchBar';
+import Signup from './components/Signup/Signup';
 
 const postData = [ 
   { 
@@ -45,19 +45,38 @@ const postData = [
              to choose in 2023`, 
   } 
 ] 
+
 function App() {
+  const [showCreatePost, setShowCreatePost] = useState(false);
+
   return (
     <div className="App">
       <Navbar />
-      <header className="main-headings">Welcome to the wannabe Government Blog site</header>
-      <header className="App-header">
-        <SearchBox /> 
+      <header className="main-headings">
+        Welcome to the wannabe Government Blog site
       </header>
+      <Login/>
+      <header className="App-header">
+        <SearchBox />  
+      </header>
+      <div className='button-container'>
+      <button className='button-margin custom-button large-button' onClick={() => setShowCreatePost(true)}>Create a New Post</button>
+      <p>&nbsp;</p>
+      {showCreatePost && (
+        <CreatePost onClose={() => setShowCreatePost(false)} />
+      )}
+      </div>
+      <p>
+      &nbsp;
+      </p>
       <main>
         {postData.map((post, index) => (
           <Post key={index} post={post} />
         ))}
       </main>
+      <div className="App">
+      <Signup />
+      </div>
     </div>
   );
 }

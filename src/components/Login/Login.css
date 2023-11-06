@@ -1,0 +1,87 @@
+.login-backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(85, 85, 85); /* semi-transparent backdrop */
+    z-index: 10;
+  }
+  
+  .login-container {
+    background:  #0056b3;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 90%; 
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputLabels {
+    justify-content: center;
+    display: flex;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em; 
+    border: 1px solid #000000;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"] {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #004494;
+  }
+  
+  button[type="button"] {
+    background-color: #ffffff;
+    color: #0056b3;
+    margin-top: -0.5em; 
+  }
+  
+  button[type="button"]:hover {
+    text-decoration: underline;
+  }
+
+  .main-headings {
+    font-size: 2em; 
+    font-weight: bold;
+    size: 100dp;
+    text-decoration: solid;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .input{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+  }
