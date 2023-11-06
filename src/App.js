@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar';
-import { CreatePost, Post } from './components/Post/Post';
+import { StaticPost, Post } from './components/Post/Post';
 import SearchBox from './components/SearchBar/SearchBar';
-import Signup from './components/Signup/Signup';
+import CreatePost from './components/Post/CreatePost';
 
 const postData = [ 
   { 
@@ -47,36 +47,55 @@ const postData = [
 ] 
 
 function App() {
+  
   const [showCreatePost, setShowCreatePost] = useState(false);
+  const handlePostCreate = async (newPost) => {
+    try {
+      const response = await fetch('https://localhost:3003/api/posts', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newPost)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Post created successfully', data);
+      } else {
+        const errorData = await response.json();
+        console.error('Failed to create post', errorData);
+      }
+    } catch (error) {
+      console.error('There was an error creating the post', error);
+    }
+  };
 
   return (
     <div className="App">
-      <Navbar />
-      <header className="main-headings">
+      {/* <header className="main-headings">
         Welcome to the wannabe Government Blog site
-      </header>
-      <Login/>
+      </header> */}
+      <Login />
       <header className="App-header">
-        <SearchBox />  
+        <SearchBox /> 
       </header>
       <div className='button-container'>
-      <button className='button-margin custom-button large-button' onClick={() => setShowCreatePost(true)}>Create a New Post</button>
-      <p>&nbsp;</p>
-      {showCreatePost && (
-        <CreatePost onClose={() => setShowCreatePost(false)} />
-      )}
+        <button className='button-margin custom-button large-button' onClick={() => setShowCreatePost(true)}>
+          Create a New Post
+        </button>
+        {showCreatePost && (
+          <CreatePost onClose={() => setShowCreatePost(false)} onPostCreate={handlePostCreate} />
+        )}
       </div>
       <p>
-      &nbsp;
-      </p>
+          &nbsp;
+        </p> 
       <main>
         {postData.map((post, index) => (
           <Post key={index} post={post} />
         ))}
       </main>
-      <div className="App">
-      <Signup />
-      </div>
     </div>
   );
 }

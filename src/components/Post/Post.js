@@ -1,7 +1,7 @@
 import React from 'react';
 import './Post.css'; 
 
-function CreatePost({ onClose }) {
+function StaticPost({ onClose }) {
   return (
     <div className='create-post-container'>
       <h2>Create a new Post</h2>
@@ -23,4 +23,4 @@ const Post = ({ post }) => (
   </article>
 );
 
-export { CreatePost, Post };
+export { StaticPost, Post };

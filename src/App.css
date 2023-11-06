@@ -17,7 +17,7 @@ body {
 }
 
 #root, .App {
-  background-color: #ffffff;
+  background-color: #000000;
   height: 100%; 
   width: 100%; 
 }
@@ -35,12 +35,12 @@ body {
   font-weight: bold;
   size: 100dp;
   text-decoration: solid;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0); /* Set text color to black */
   display: flex;
   justify-content: center; 
   align-items: center; 
-  
 }
+
 .create-post-container button {
   display: block;
   margin: 0 auto;
