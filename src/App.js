@@ -5,6 +5,7 @@ import Navbar from './components/Navigation/Navbar';
 import { StaticPost, Post } from './components/Post/Post';
 import SearchBox from './components/SearchBar/SearchBar';
 import CreatePost from './components/Post/CreatePost';
+import GetPosts from './components/Post/GetPosts';
 
 const postData = [ 
   { 
@@ -91,11 +92,12 @@ function App() {
       <p>
           &nbsp;
         </p> 
-      <main>
+      {/* <main>
         {postData.map((post, index) => (
           <Post key={index} post={post} />
         ))}
-      </main>
+      </main> */}
+      <GetPosts/>
     </div>
   );
 }

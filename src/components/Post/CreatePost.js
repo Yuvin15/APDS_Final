@@ -27,7 +27,7 @@ function CreatePost({ onClose, onPostCreate }) {
     <div className='create-post-container'>
       <h2>Create a new Post</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='imageId' className='inputLabels'>Image ID</label>
+        <label htmlFor='imageId' className='inputLabels'>Title</label>
         <input 
           id='imageId'
           className='inputField' 
@@ -36,7 +36,7 @@ function CreatePost({ onClose, onPostCreate }) {
           onChange={(e) => setImageId(e.target.value)}
         />
         
-        <label htmlFor='imageCaption' className='inputLabels'>Image Caption</label>
+        <label htmlFor='imageCaption' className='inputLabels'>Description</label>
         <input 
           id='imageCaption'
           className='inputField' 

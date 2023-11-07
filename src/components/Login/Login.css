@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(85, 85, 85); /* semi-transparent backdrop */
+    background-color: rgb(85, 85, 85); 
     z-index: 10;
   }
   
@@ -72,7 +72,7 @@
     font-weight: bold;
     size: 100dp;
     text-decoration: solid;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center; 
     align-items: center; 
