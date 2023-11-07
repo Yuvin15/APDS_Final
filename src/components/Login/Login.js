@@ -67,9 +67,9 @@ const Login = () => {
 
   return (
     <>
-    <div className='main-headings'>
+    {/* <div className='main-headings'>
         Welcome to the Wannabe Government Website
-    </div>
+    </div> */}
       {showPopup && ( 
         <div className="login-backdrop">
           <div className="login-container">

@@ -17,7 +17,7 @@ body {
 }
 
 #root, .App {
-  background-color: #ffffff;
+  background-color: #1b44b6;
   height: 100%; 
   width: 100%; 
 }
@@ -31,11 +31,12 @@ body {
 }
 
 .main-headings {
+  border: 10px black;
   font-size: 2em; 
   font-weight: bold;
   size: 100dp;
   text-decoration: solid;
-  color: rgb(0, 0, 0); /* Set text color to black */
+  color: rgb(0, 0, 0); 
   display: flex;
   justify-content: center; 
   align-items: center; 
@@ -89,3 +90,4 @@ body {
   background-color: #3787d8; 
   color: #ffffff; 
 }
+

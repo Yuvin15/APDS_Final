@@ -1,4 +1,3 @@
-/* Post.css */
 .post {
     background-color: #3787d8;
     border: 1px solid #000000;
@@ -72,4 +71,36 @@
     border-radius: 10px;
     background-color: #007bff; 
     color: #ffffff; 
+  }
+
+  .main-headings {
+    font-size: 2em; 
+    font-weight: bold;
+    size: 100dp;
+    text-decoration: solid;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .error-main-headings {
+    font-size: 15dp;
+    outline: #000000; 
+    font-weight: bold;
+    size: 100dp;
+    text-decoration: solid;
+    color: rgb(255, 7, 7);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  .delete-icon {
+    cursor: pointer;
+    color: #ff0000; /* Red color for the trash icon */
+    /* additional styling */
+  }
+  
+  .delete-icon:hover {
+    color: #cc0000; /* Darker red on hover for visual feedback */
   }

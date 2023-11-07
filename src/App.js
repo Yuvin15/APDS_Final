@@ -74,9 +74,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="main-headings">
+      <header className="main-headings">
         Welcome to the wannabe Government Blog site
-      </header> */}
+      </header>
       <Login />
       <header className="App-header">
         <SearchBox /> 

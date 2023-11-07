@@ -5,7 +5,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
 
   const handleSignup = async (event) => {
-    event.preventDefault(); // Prevent the form from submitting in the traditional way
+    event.preventDefault(); 
 
     try {
       const response = await fetch('https://localhost:3003/api/users/signup', {
@@ -19,13 +19,9 @@ const Signup = () => {
       const data = await response.json();
 
       if (response.status === 201) {
-        // Successfully signed up
         console.log('Signup successful', data);
-        // Further actions like redirecting the user or showing a success message
       } else {
-        // Handle errors
         console.error('Signup failed', data.error);
-        // Show error message to the user
       }
     } catch (error) {
       console.error('There was an error!', error);
