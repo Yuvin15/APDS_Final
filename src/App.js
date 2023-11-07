@@ -79,7 +79,7 @@ function App() {
       </header>
       <Login />
       <header className="App-header">
-        <SearchBox /> 
+        {/* <SearchBox />  */}
       </header>
       <div className='button-container'>
         <button className='button-margin custom-button large-button' onClick={() => setShowCreatePost(true)}>

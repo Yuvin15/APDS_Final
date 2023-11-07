@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   const handleSignup = async (event) => {
-    event.preventDefault(); // Prevent the form from submitting in the traditional way
+    event.preventDefault(); 
 
     try {
       const response = await fetch('https://localhost:3003/api/users/signup', {
@@ -29,7 +29,6 @@ const Login = () => {
       if (response.status === 201) {
         console.log('Signup successful', data);
       } else {
-        // Handle errors
         console.error('Signup failed', data.error);
       }
     } catch (error) {
