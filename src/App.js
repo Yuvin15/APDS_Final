@@ -7,6 +7,7 @@ import SearchBox from './components/SearchBar/SearchBar';
 import CreatePost from './components/Post/CreatePost';
 import GetPosts from './components/Post/GetPosts';
 
+// This was for testing
 const postData = [ 
   { 
       department: "Web Tech", 
@@ -50,6 +51,7 @@ const postData = [
 function App() {
   
   const [showCreatePost, setShowCreatePost] = useState(false);
+  // This part doesn't work 
   const handlePostCreate = async (newPost) => {
     try {
       const response = await fetch('https://localhost:3003/api/posts', { 

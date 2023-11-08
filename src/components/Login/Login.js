@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import './Login.css'
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPopup, setShowPopup] = useState(true);
-  const [alertMessage, setAlertMessage] = useState(null);
+  const [username, setUsername] = useState(''); // Get the username
+  const [password, setPassword] = useState(''); // Get the password
+  const [showPopup, setShowPopup] = useState(true); // Get the popup
+  const [alertMessage, setAlertMessage] = useState(null); // For custom alert message
 
-  const togglePopup = () => {
+  const togglePopup = () => { // For the popup
     setShowPopup(!showPopup);
     setUsername(''); 
     setPassword(''); 
   };
-
+// Below function is to handle the connection and do the sign up function
   const handleSignup = async (event) => {
     event.preventDefault(); 
 
@@ -24,7 +24,7 @@ const Login = () => {
         },
         body: JSON.stringify({ username, password })
       });
-
+    // Gets the data from the api
       const data = await response.json();
 
       if (response.status === 201) {
@@ -36,7 +36,7 @@ const Login = () => {
       console.error('There was an error!', error);
     }
   };
-
+  // Below function is to handle the connection and do the login function
   const handleLogin = async (event) => {
     event.preventDefault(); 
 
@@ -48,7 +48,7 @@ const Login = () => {
         },
         body: JSON.stringify({ username, password })
       });
-
+      // Gets the data from the api
       const data = await response.json();
 
       if (response.status === 200) {

@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const GetPosts = () => {
+  // Variables used 
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState('');
   const [alertMessage, setAlertMessage] = useState(null);
 
   useEffect(() => {
+    // This gets all the posts from the db
     const fetchPosts = async () => {
       try {
         const response = await fetch('https://localhost:3003/api/posts', {
@@ -38,7 +40,7 @@ const GetPosts = () => {
 
     fetchPosts();
   }, []);
-
+  // This is the method to delete the posts
   const handleDelete = async (Imageid) => {
     try {
       const response = await fetch('https://localhost:3003/api/posts/delete', {  

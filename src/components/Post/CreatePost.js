@@ -3,12 +3,14 @@ import './Post.css'
 
 function CreatePost({ onClose, onPostCreate }) {
   
+  // Below are the fields in the db
   const [imageId, setImageId] = useState('');
   const [imageCaption, setImageCaption] = useState('');
   const [likes, setLikes] = useState(0);
   const [postSaved, setPostSaved] = useState(false);
   const [alertMessage, setAlertMessage] = useState(null);
 
+  // This is the actual code to create the post
   const handleSubmit = async (event) => {
     event.preventDefault(); 
     const post = {
