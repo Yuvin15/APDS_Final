@@ -1,4 +1,4 @@
-# APDS&311 Frontend
+# APDS7311 Frontend
 
 This is the frontend part of our APDS7311 Porfolio of Evidence/Full Stack Application. It is built with React and handles the user interface and interaction. 
 
