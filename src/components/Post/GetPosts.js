@@ -6,6 +6,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const GetPosts = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState('');
+  const [alertMessage, setAlertMessage] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -18,16 +19,19 @@ const GetPosts = () => {
           }
         });
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          console.log('Error' + response.status);
+          throw new Error(`Error: ${response.status}`);
         }
         const data = await response.json();
         console.log(data);
         if (data.posts) {
           setPosts(data.posts);
         } else {
+          console.log(Error);
           setError('No posts found');
         }
       } catch (error) {
+        console.log(error);
         setError(`Error: ${error.message}`);
       }
     };
@@ -47,17 +51,19 @@ const GetPosts = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        console.log(response.status);
+        throw new Error(response.status);
       }
 
       const result = await response.json();
+      setAlertMessage("Deleted Successfully. Please reload the page to see update.");  
       console.log(result.message); 
 
       setPosts(posts.filter(post => post.ImageID !== Imageid));
 
     } catch (error) {
       console.error('There was an error deleting the post:', error);
-      setError(`Error: ${error.message}`);
+      setError(error.messag);
     }
   };
 
@@ -65,6 +71,7 @@ const GetPosts = () => {
     <div>
       <h1 className='main-headings'>All Posts</h1>
       {error && <p className="error-main-headings">{error}</p>}
+      {alertMessage && <div className="alert1">{alertMessage}</div>}
       {posts.length > 0 ? (
         <div className="posts">
           {posts.map((post) => ( 

@@ -7,6 +7,7 @@ function CreatePost({ onClose, onPostCreate }) {
   const [imageCaption, setImageCaption] = useState('');
   const [likes, setLikes] = useState(0);
   const [postSaved, setPostSaved] = useState(false);
+  const [alertMessage, setAlertMessage] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); 
@@ -18,7 +19,7 @@ function CreatePost({ onClose, onPostCreate }) {
     };
     if (onPostCreate) {
       console.log("working");
-      alert("Success");      
+      setAlertMessage("Created Successfully. Please reload the page.");      
       onPostCreate(post);
     }
   };
@@ -51,6 +52,7 @@ function CreatePost({ onClose, onPostCreate }) {
         </p>
         <button type='button' className='custom-button' onClick={onClose}>Close</button>
       </form>
+      {alertMessage && <div className="alert1">{alertMessage}</div>}
     </div>
   );
 }

@@ -97,10 +97,19 @@
   }
   .delete-icon {
     cursor: pointer;
-    color: #ff0000; /* Red color for the trash icon */
-    /* additional styling */
+    color: #ff0000; 
+    
   }
   
   .delete-icon:hover {
-    color: #cc0000; /* Darker red on hover for visual feedback */
+    color: #cc0000; 
+  }
+
+  .alert1 {
+    background-color: #3ff35d; 
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #32eb7f; 
+    border-radius: 4px;
+    margin-bottom: 10px;
   }

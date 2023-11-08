@@ -5,6 +5,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPopup, setShowPopup] = useState(true);
+  const [alertMessage, setAlertMessage] = useState(null);
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
@@ -55,11 +56,11 @@ const Login = () => {
         localStorage.setItem('token', data.token);
         setShowPopup(false);
       } else {
-        alert("WRONG USERNAME AND PASSWORD, PLEASE RETRY", error)
+        setAlertMessage("WRONG USERNAME AND/OR PASSWORD, PLEASE RETRY");
         console.error('Login failed', data.message);
       }
     } catch (error) {
-        alert("Error in logging in", error)
+      setAlertMessage("Error in logging in");
       console.error('There was an error!', error);
     }
   };
@@ -72,6 +73,7 @@ const Login = () => {
       {showPopup && ( 
         <div className="login-backdrop">
           <div className="login-container">
+          {alertMessage && <div className="alert">{alertMessage}</div>}
             <h2 className='main-headings'>Login</h2>
             <form onSubmit={handleLogin}>
               <div>

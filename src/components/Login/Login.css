@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(85, 85, 85); 
+    background-color: rgb(255, 255, 255); 
     z-index: 10;
   }
   
@@ -84,4 +84,13 @@
     margin-bottom: 10px;
     border: 1px solid #000000;
     border-radius: 4px;
+  }
+
+  .alert {
+    background-color: #ffcccb; 
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #ff4136; 
+    border-radius: 4px;
+    margin-bottom: 10px;
   }

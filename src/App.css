@@ -17,7 +17,7 @@ body {
 }
 
 #root, .App {
-  background-color: #1b44b6;
+  background-color: rgb(255, 255, 255); 
   height: 100%; 
   width: 100%; 
 }
@@ -90,4 +90,10 @@ body {
   background-color: #3787d8; 
   color: #ffffff; 
 }
-
+.alert {
+  background-color: #ffcccb; 
+  padding: 10px;
+  border: 1px solid #ff4136; 
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
