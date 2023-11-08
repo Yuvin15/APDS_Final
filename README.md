@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# APDS&311 Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend part of our APDS7311 Porfolio of Evidence/Full Stack Application. It is built with React and handles the user interface and interaction. 
 
-## Available Scripts
+## NOTE
+**Please use this for the username and password:**
+**Username : test2**
+**Password : 123**
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- Node.js and npm should be installed on your system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Navigate to the `Frontend` directory:
+2. Clone the backend code(https://github.com/VCDBN/apds7311-part-2-Yuvin15.git)
+3. Run both the frontend project and the backend at the same time.
+4. Open the frontend on your localhost port in your browser.
+5. Continue using the application.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- User Authentication:
+- Encryption for login/signup.
+- Users cannot access certain routes without logging in.
 
-### `npm run build`
+- CRUD Functionality:
+- Logged-in users can create, view, and delete posts.(Not user specific yet)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- VSCode
+- FontAwesome
+- Axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Roadmap
 
-### `npm run eject`
+- Implement User specfic functionality for posts.
+- Fix the sign up part
+- Improve UI/UX.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
