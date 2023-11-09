@@ -54,23 +54,23 @@ function App() {
   // This part doesn't work 
   const handlePostCreate = async (newPost) => {
     try {
-      const response = await fetch('https://localhost:3003/api/posts', { 
-        method: 'POST',
+      const response = await fetch('https://localhost:3003/api/posts', {  //Backend URL
+        method: 'POST', // Pushes to db
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newPost)
+        body: JSON.stringify(newPost) //Pushes this whole const to db
       });
 
       if (response.ok) {
         const data = await response.json();
-        console.log('Post created successfully', data);
-      } else {
+        console.log('Post created successfully', data); // Used for testing
+      } else { 
         const errorData = await response.json();
-        console.error('Failed to create post', errorData);
+        console.error('Failed to create post', errorData); // Used for testing
       }
     } catch (error) {
-      console.error('There was an error creating the post', error);
+      console.error('There was an error creating the post', error); // Used for testing
     }
   };
 

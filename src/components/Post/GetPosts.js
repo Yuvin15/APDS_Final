@@ -43,23 +43,23 @@ const GetPosts = () => {
   // This is the method to delete the posts
   const handleDelete = async (Imageid) => {
     try {
-      const response = await fetch('https://localhost:3003/api/posts/delete', {  
-        method: 'DELETE',
+      const response = await fetch('https://localhost:3003/api/posts/delete', {  //Backend URL
+        method: 'DELETE', // DELETE to delete the post
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwidXNlcmlkIjoiNjUwN2VmOTI0MjVmNDc0ZGQ5YTlhMGY5IiwiaWF0IjoxNjk1MDIxODQ2LCJleHAiOjE2OTUwMjU0NDZ9.AKRx9SQq8nEtRFkUapl45amviGH47FDQRQnbg-Qog6g'
           },
-        body: JSON.stringify({ Imageid })
+        body: JSON.stringify({ Imageid }) // Delete by Imageid
       });
 
       if (!response.ok) {
-        console.log(response.status);
-        throw new Error(response.status);
+        console.log(response.status);// Used for testing
+        throw new Error(response.status);// Used for testing
       }
 
       const result = await response.json();
       setAlertMessage("Deleted Successfully. Please reload the page to see update.");  
-      console.log(result.message); 
+      console.log(result.message); // Used for testing
 
       setPosts(posts.filter(post => post.ImageID !== Imageid));
 

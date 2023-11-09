@@ -8,23 +8,23 @@ const Signup = () => {
     event.preventDefault(); 
 
     try {
-      const response = await fetch('https://localhost:3003/api/users/signup', {
-        method: 'POST',
+      const response = await fetch('https://localhost:3003/api/users/signup', { //Backend URL
+        method: 'POST', // Pushes to DB
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }) // What it pushes
       });
 
       const data = await response.json();
 
       if (response.status === 201) {
-        console.log('Signup successful', data);
+        console.log('Signup successful', data); // Used for testing
       } else {
-        console.error('Signup failed', data.error);
+        console.error('Signup failed', data.error); // Used for testing
       }
     } catch (error) {
-      console.error('There was an error!', error);
+      console.error('There was an error!', error); // Used for testing
     }
   };
 

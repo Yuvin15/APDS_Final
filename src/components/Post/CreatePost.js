@@ -13,15 +13,15 @@ function CreatePost({ onClose, onPostCreate }) {
   // This is the actual code to create the post
   const handleSubmit = async (event) => {
     event.preventDefault(); 
-    const post = {
+    const post = { // Following are the data in the database
       Imageid: imageId,
       Imagecaption: imageCaption,
       likes: likes,
       PostSaved: postSaved
     };
-    if (onPostCreate) {
-      console.log("working");
-      setAlertMessage("Created Successfully. Please reload the page.");      
+    if (onPostCreate) { // When created successfully then show the custom message
+      console.log("working"); // Used for testing
+      setAlertMessage("Created Successfully. Please reload the page."); // Custom error 
       onPostCreate(post);
     }
   };
