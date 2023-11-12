@@ -41,3 +41,10 @@ This is the frontend part of our APDS7311 Porfolio of Evidence/Full Stack Applic
 - Fix the sign up part
 - Improve UI/UX.
 
+## References
+These references I forgot to add to the Word Document
+- https://www.geeksforgeeks.org/axios-in-react-a-guide-for-beginners/, Author: GeekForGeeks
+- https://www.freecodecamp.org/news/how-to-use-axios-with-react/, Author: Reed Barger
+- https://www.react.express, Author: React
+- https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/, Author: FreeCodeCamp
+- 
