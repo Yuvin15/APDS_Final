@@ -54,7 +54,7 @@ const GetPosts = () => {
 
       if (!response.ok) {
         console.log(response.status);// Used for testing
-        throw new Error(response.status);// Used for testing
+        throw new Error(response.status);// Used for testing 
       }
 
       const result = await response.json();

@@ -1,12 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css'
 
 const Login = () => {
-  const [username, setUsername] = useState(''); // Get the username
-  const [password, setPassword] = useState(''); // Get the password
-  const [showPopup, setShowPopup] = useState(true); // Get the popup
-  const [alertMessage, setAlertMessage] = useState(null); // For custom alert message
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPopup, setShowPopup] = useState(true);
+  const [alertMessage, setAlertMessage] = useState(null); 
+  const [loginAttempts, setLoginAttempts] = useState(0); // Brute Force Protection
+  const [isLockedOut, setIsLockedOut] = useState(false); // Brute Force Protection
 
+  useEffect(() => {
+    if (loginAttempts >= 3) {
+      setIsLockedOut(true);
+      setAlertMessage("Too many failed attempts. Please wait for 30 seconds.");
+      const timer = setTimeout(() => {
+        setLoginAttempts(0);
+        setIsLockedOut(false);
+        setAlertMessage(null);
+      }, 
+      30000); // 30 seconds lockout
+
+      return () => clearTimeout(timer);
+    }
+  }, [loginAttempts]);
   const togglePopup = () => { // For the popup
     setShowPopup(!showPopup);
     setUsername(''); 
@@ -38,30 +54,32 @@ const Login = () => {
   };
   // Below function is to handle the connection and do the login function
   const handleLogin = async (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
+    if (isLockedOut) return; // Prevent login attempts during lockout
 
     try {
-      const response = await fetch('https://localhost:3003/api/users/login', { // Backend URL
-        method: 'POST', // Puts to the database
+      const response = await fetch('https://localhost:3003/api/users/login', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password }) // Gets username and password
+        body: JSON.stringify({ username, password })
       });
-      // Gets the data from the api
       const data = await response.json();
 
       if (response.status === 200) {
         console.log('Login successful', data);
-        localStorage.setItem('token', data.token); // Getes the token so that we can create/get/delete posts
+        localStorage.setItem('token', data.token);
         setShowPopup(false);
       } else {
-        setAlertMessage("WRONG USERNAME AND/OR PASSWORD, PLEASE RETRY"); // Custom error
-        console.error('Login failed', data.message); // Used for testing
+        setLoginAttempts(attempts => attempts + 1);
+        setAlertMessage("WRONG USERNAME AND/OR PASSWORD, PLEASE RETRY");
+        console.error('Login failed', data.message);
       }
     } catch (error) {
-      setAlertMessage("Error in logging in"); // Custom error
-      console.error('There was an error!', error);// Used for testing
+      setLoginAttempts(attempts => attempts + 1);
+      setAlertMessage("Error in logging in");
+      console.error('There was an error!', error);
     }
   };
 
@@ -103,7 +121,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <button classname='button' type="submit">Login</button>
+              <button className='button' type="submit" disabled={isLockedOut}>Login</button>
               <p>
               &nbsp;
               </p>
